@@ -398,6 +398,18 @@
     },
     {
         "inputs": [],
+        "name": "get_rem",
+        "outputs": [
+            {
+                "name": "rem",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
         "name": "get_current_rate",
         "outputs": [
             {

@@ -46,7 +46,7 @@ const R_MIN = 10000; //1% * MIN_LIQUIDITY
 const R_1 = 70000; //7% * MIN_LIQUIDITY
 const R_2 = 600000; //60% * MIN_LIQUIDITY
 const U_OPTI = 900000; //90% * MIN_LIQUIDITY
-const YEAR_IN_SEC = 30758400;
+const YEAR_IN_SEC = 307584;
 const ORACLE_DECIMALS = 100000000;
 const USDC_DECIMALS = 1000000;
 const ETH_DECIMALS = 1000000000000000000;
@@ -734,6 +734,9 @@ func updateDebt{
             let (interests, rem) = uint256_unsigned_div_rem(numerator, denominator);
             let (new_total_usdc_due) = uint256_checked_add(total_usdc_due, interests);
             let (new_total_usdc_deposit) = uint256_checked_add(total_deposit, interests);
+
+
+            _last_update_time.write(current_time);
             _total_usdc_due.write(new_total_usdc_due);
             _total_usdc_deposit.write(new_total_usdc_deposit);
             _interest_rem.write(rem);
@@ -900,6 +903,12 @@ func get_total_usdc_due {syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_c
 }
 
 
+@view
+func get_rem{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (rem: Uint256) {
+    let (rem) = _interest_rem.read();
+    return (rem,);
+}
+
 
 @view
 func get_current_rate{
@@ -981,4 +990,5 @@ func get_user_ratio {syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
     let (user_ratio) = _compute_borrow_ratio(borrow_amount, collateral_amount);
     return (user_ratio,);
 }
+
 
