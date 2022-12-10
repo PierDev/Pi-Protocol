@@ -1,0 +1,491 @@
+[
+    {
+        "members": [
+            {
+                "name": "low",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "high",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "Uint256",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "data": [
+            {
+                "name": "debt_token_address",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "_debt_token_deployed",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "pi_token_address",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "_pi_token_deployed",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "oracle_address",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "_oracle_deployed",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_deposit",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_addCollateral",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_borrow",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_repay",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_removeCollateral",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_withdraw",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_liquidate",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "new_total_usdc_due",
+                "type": "Uint256"
+            },
+            {
+                "name": "new_total_usdc_deposit",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "_emit_update_debt",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "collateral_token",
+                "type": "felt"
+            },
+            {
+                "name": "lendable_token",
+                "type": "felt"
+            },
+            {
+                "name": "debt_class_hash",
+                "type": "felt"
+            },
+            {
+                "name": "pi_class_hash",
+                "type": "felt"
+            },
+            {
+                "name": "oracle_class_hash",
+                "type": "felt"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "deposit",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "addCollateral",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "borrow",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "repay",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "removeCollateral",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "withdraw",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "liquidate",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_collateral_token",
+        "outputs": [
+            {
+                "name": "collateral_token",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_lendable_token",
+        "outputs": [
+            {
+                "name": "lendable_token",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_debt_token",
+        "outputs": [
+            {
+                "name": "debt_token",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_pi_token",
+        "outputs": [
+            {
+                "name": "pi_token",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_oracle",
+        "outputs": [
+            {
+                "name": "oracle",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_total_usdc_deposit",
+        "outputs": [
+            {
+                "name": "total_usdc_deposit",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_total_usdc_due",
+        "outputs": [
+            {
+                "name": "total_usdc_due",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_current_rate",
+        "outputs": [
+            {
+                "name": "rate",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            }
+        ],
+        "name": "get_user_collateral",
+        "outputs": [
+            {
+                "name": "user_collateral",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_reserve_usage",
+        "outputs": [
+            {
+                "name": "reserve_usage",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            }
+        ],
+        "name": "get_user_deposit_value",
+        "outputs": [
+            {
+                "name": "user_deposit_value",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            }
+        ],
+        "name": "get_user_debt_value",
+        "outputs": [
+            {
+                "name": "user_deposit_value",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "user",
+                "type": "felt"
+            }
+        ],
+        "name": "get_user_ratio",
+        "outputs": [
+            {
+                "name": "user_ratio",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

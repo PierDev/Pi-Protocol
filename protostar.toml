@@ -1,0 +1,22 @@
+[project]
+protostar-version = "0.8.1"
+lib-path = "lib"
+cairo-path = ["lib"]
+
+[contracts]
+piToken = [
+    "src/piToken.cairo",
+]
+debt_token = [
+    "src/debt_token.cairo",
+]
+erc20 = [
+    "src/erc20.cairo",
+]
+oracle = [
+    "src/oracle.cairo",
+]
+pool = [
+    "src/pool.cairo",
+]
+
